@@ -1,0 +1,9 @@
+body {
+    max-width: 1280px;
+    box-sizing: border-box;
+}
+.slick-list {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+}

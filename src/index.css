@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.fixStyleHeader {
+    background-color: white;
+    padding: 0;
+    position: fixed;
+    width: 100%;
+    left:0;
+    top:0;
+    right: 0;
+    z-index: 1000;
+}
+.ant-carousel .slick-dots-bottom  {
+    margin: 0;
+}
+.MovieShowing .ant-tabs-nav-wrap {
+    justify-content: center;
+}
+.MovieShowing .ant-tabs-nav-wrap .TabStyle {
+    color:darkolivegreen;
+    font-size: large;
+}
