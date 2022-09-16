@@ -1,28 +1,32 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialState = {
-
+  
   selectedTicket: [],
+  
 };
 
 const selectTicketHandler = (state = initialState, { payload }) => {
-  console.log("payload", payload);
-
+  
+ 
   const index = state.selectedTicket.findIndex(
     (item) => 
-    item === payload.maGhe
+    item.maGhe === payload.maGhe
   );
-console.log(index);
 
-console.log(payload.maGhe);
+    
+
   if (index === -1) {
-    const newSelectedTicket = [...state.selectedTicket, payload.maGhe ];
+    const newSelectedTicket = [...state.selectedTicket, payload ];
     
     return { ...state, selectedTicket: newSelectedTicket };
   }
   const newSelectedTicket = state.selectedTicket.filter(
-    (item) => item !== payload.maGhe
+    (item) => 
+    item.maGhe !== payload.maGhe
+    
   );
-  console.log(newSelectedTicket);
+  
+
   return { ...state, selectedTicket: newSelectedTicket };
 };
 

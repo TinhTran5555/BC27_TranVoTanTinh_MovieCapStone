@@ -12,9 +12,10 @@ const Cinema = () => {
     error,
   } = useRequest(() => movieAPI.GetCumRapDetails());
   const navigate = useNavigate();
-  const goToTicket= (ticketId) => {
-    navigate(`/ticket/${ticketId}`);
+  const goToTicket= (checkoutId) => {
+    navigate(`/checkout/${checkoutId}`);
   };
+  
   
  
   return (

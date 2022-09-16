@@ -1,36 +1,79 @@
 
-.gheDaDat {
-  color: black;
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  border: 3px solid #ffa500;
-  background: #ffa500;
-  margin: 3px;
-}
-.gheDangChon {
-  color: #000;
-  border: 3px solid #6dee6d;
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  background: #6dee6d;
-  margin: 3px;
-}
+
+
 .gheChuaDat {
   color: #000;
   border: 3px solid #fff;
-  width: 50px;
-  height: 50px;
+  background: #fff;
+  width: 24px;
+  height: 24px;
+  font-size: 10px;
   border-radius: 5px;
   margin: 3px;
 }
 .gheVip {
-  color: yellow;
-  background-color: green;
-  border: 3px solid #fff;
-  width: 50px;
-  height: 50px;
+  color: black;
+  
+  border: 3px solid #01c73c;
+ 
   border-radius: 5px;
   margin: 3px;
+}
+.gheDangChon {
+  color: #fff;
+  border: 3px solid red;
+  
+  border-radius: 5px;
+  background: red;
+  margin: 3px;
+}
+.gheDaDat {
+  color: white;
+ 
+  border-radius: 5px; 
+  background: #bbb;
+  
+ 
+}
+.hienThiGhe {
+  min-width: 492px;
+  max-width: 492px;
+}
+
+@media only screen and (min-width: 678px) {
+  .gheChuaDat {
+    width: 34px;
+  height: 34px;
+  font-size: 14px;
+  }
+  .hienThiGhe {
+    min-width: 672px;
+    max-width: 672px;
+  }
+ 
+
+}
+@media only screen and (min-width: 1024px) {
+  .gheChuaDat {
+    width: 32px;
+  height: 32px;
+  }
+  .hienThiGhe {
+    min-width: 640px;
+    max-width: 640px;
+    
+  }
+
+}
+@media only screen and (min-width: 1024px) {
+  .gheChuaDat {
+    width: 35px;
+  height: 35px;
+  }
+  .hienThiGhe {
+    min-width: 680px;
+    max-width: 680px;
+    
+  }
+
 }

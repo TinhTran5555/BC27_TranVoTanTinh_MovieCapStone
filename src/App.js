@@ -53,11 +53,12 @@ function App() {
           {/* index: path của child route khớp 100% với path của parent route */}
           <Route index element={<Home />} />
           <Route path="movie/:movieId" element={<Movie />} />
-          <Route path="ticket/:ticketId" element={<Ticket />} />
+          
           <Route
             path="checkout/:checkoutId"
             element={
-              <CheckoutRoute>
+              <CheckoutRoute >
+               <Ticket path="checkout/:checkoutId"/>
               
               </CheckoutRoute>
             }

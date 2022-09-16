@@ -19,9 +19,9 @@ const MainLayout = () => {
         <div className="h-28"></div>
         <Outlet />
       </Layout.Content>
-      {/* <Layout.Footer className="container">
+      <Layout.Footer className="container">
         <Footer />
-      </Layout.Footer> */}
+      </Layout.Footer>
     </Layout>
   );
 };
