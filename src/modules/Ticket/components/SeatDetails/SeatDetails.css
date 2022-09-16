@@ -1,0 +1,36 @@
+
+.gheDaDat {
+  color: black;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  border: 3px solid #ffa500;
+  background: #ffa500;
+  margin: 3px;
+}
+.gheDangChon {
+  color: #000;
+  border: 3px solid #6dee6d;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background: #6dee6d;
+  margin: 3px;
+}
+.gheChuaDat {
+  color: #000;
+  border: 3px solid #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 3px;
+}
+.gheVip {
+  color: yellow;
+  background-color: green;
+  border: 3px solid #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  margin: 3px;
+}

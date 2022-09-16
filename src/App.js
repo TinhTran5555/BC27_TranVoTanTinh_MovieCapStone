@@ -4,7 +4,8 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import MainLayout from "components/MainLayout";
 import AuthLayout from "components/AuthLayout";
 import CheckoutRoute from "routes/CheckoutRoute";
-import "./App.css"
+import "./App.css";
+
 // Không import trực tiếp các pages, vì nó sẽ được tải tất cả ở lần đầu tiên
 // import Home from "modules/Home/pages/Home";
 // import Movie from "modules/Movie/pages/Movie";
@@ -14,6 +15,7 @@ import "./App.css"
 // Để chỉ cần tải những pages cần thiết ta sử dụng kĩ thuật lazyload
 const Home = lazy(() => import("modules/Home/pages/Home"));
 const Movie = lazy(() => import("modules/Movie/pages/Movie"));
+const Ticket = lazy(() => import("modules/Ticket/pages/Ticket"));
 const Login = lazy(() => import("modules/Authentication/pages/Login"));
 const Register = lazy(() => import("modules/Authentication/pages/Register"));
 
@@ -50,12 +52,13 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           {/* index: path của child route khớp 100% với path của parent route */}
           <Route index element={<Home />} />
-          {/* <Route path="movie/:movieId" element={<Movie />} /> */}
+          <Route path="movie/:movieId" element={<Movie />} />
+          <Route path="ticket/:ticketId" element={<Ticket />} />
           <Route
-            // path="checkout/:checkoutId"
+            path="checkout/:checkoutId"
             element={
-              <CheckoutRoute path="movie/:movieId" element={<Movie />}>
-               
+              <CheckoutRoute>
+              
               </CheckoutRoute>
             }
           />
