@@ -13,6 +13,8 @@ const Cinema = () => {
   } = useRequest(() => movieAPI.GetCumRapDetails());
   const navigate = useNavigate();
   const goToTicket= (checkoutId) => {
+ 
+
     navigate(`/checkout/${checkoutId}`);
   };
   

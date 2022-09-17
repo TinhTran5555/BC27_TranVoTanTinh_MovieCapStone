@@ -1,5 +1,4 @@
-// import useRequest from "hooks/useRequest";
-// import movieAPI from "apis/movieAPI";
+
 import { useDispatch, useSelector } from "react-redux";
 import React, { Fragment, useEffect, useState } from "react";
 import { getTicketDetails } from "modules/Ticket/reducer/ticketsSlice";
@@ -8,18 +7,25 @@ import {
   removeAllTicketsAction,
   selectTicketAction,
 } from "../../reducer/selectedTicketSlice";
-const SeatDetails = ({ checkoutId }) => {
-  console.log(checkoutId);
+import { postDatVe, ThongTinDatVe } from "modules/Ticket/reducer/ThongTinDatVe";
+
+import { useParams } from "react-router-dom";
+const SeatDetails = () => {
+  const {checkoutId} = useParams()
+  
   const dispatch = useDispatch();
   const { tickets, isLoading, error } = useSelector((state) => state.ticket);
 
   const { user } = useSelector((state) => state.auth);
 
   const { selectedTicket } = useSelector((state) => state.slectedTickets);
-
+  
   useEffect(() => {
     dispatch(getTicketDetails(checkoutId));
-  }, [checkoutId]);
+  }, [checkoutId, selectedTicket]);
+
+
+  
   if (!tickets) {
     return null;
   }
@@ -60,7 +66,7 @@ const SeatDetails = ({ checkoutId }) => {
                     danhSachGheDangChon.maGhe === danhSachGhe.maGhe
                 );
 
-                if (indexGheDangDat != -1) {
+                if (indexGheDangDat !== -1) {
                   classGheDangDat = "gheDangChon";
                 }
                 return (
@@ -157,8 +163,19 @@ const SeatDetails = ({ checkoutId }) => {
             </div>
           ) : null}
           <div className="absolute bottom-0 w-full">
-            <div className="bg-green-500 text-light text-center w-full py-3 text-2xl font-bold">
-              Đặt vé{" "}
+            <div 
+            onClick={()=> {
+              const thongTinDatVe = new ThongTinDatVe();
+              thongTinDatVe.maLichChieu = checkoutId ;
+              thongTinDatVe.danhSachVe = selectedTicket;
+              console.log(thongTinDatVe);
+              dispatch(postDatVe(thongTinDatVe));dispatch(removeAllTicketsAction());
+             
+              
+            }} 
+            
+            className="bg-green-500 text-light text-center w-full py-3 text-2xl font-bold">
+              Đặt vé
             </div>
           </div>
         </div>

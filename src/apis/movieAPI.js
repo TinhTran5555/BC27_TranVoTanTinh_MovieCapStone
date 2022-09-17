@@ -1,5 +1,5 @@
 import axiosClient from "./axiosClient";
-
+import { ThongTinDatVe } from "modules/Ticket/reducer/ThongTinDatVe";
 const movieAPI = {
   getMovies: () => {
     return axiosClient.get("QuanLyPhim/LayDanhSachPhim", {
@@ -41,7 +41,9 @@ const movieAPI = {
         maNhom: "GP06",
       },
     })},
-
+    DatVe: (thongTinDatVe = new ThongTinDatVe()) => {
+      
+      return axiosClient.post("QuanLyDatVe/DatVe", thongTinDatVe)},
 
   addMovie: (movie) => {
     // Đối với dữ liệu có định dạng đặc biệt như File,...

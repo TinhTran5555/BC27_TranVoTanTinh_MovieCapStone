@@ -15,7 +15,7 @@ axiosClient.interceptors.request.use((config) => {
   // config: nội dung request gửi lên server
   // ta sẽ thay đổi headers trong request trước khi nó được gửi lên server
   const { accessToken } = store.getState().auth.user || {};
-
+  
   if (accessToken) {
     config.headers.Authorization = `Bearer ${accessToken}`;
   }

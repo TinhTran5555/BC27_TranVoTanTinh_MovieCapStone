@@ -18,6 +18,7 @@ export const getTicketDetails = createAsyncThunk(
     }
   }
 );
+
 const ticketsSlice = createSlice({
   name: "ticket/tickets",
   initialState,
@@ -43,37 +44,6 @@ const ticketsSlice = createSlice({
     })
   },
 });
-// export const selectTicketSlice = (state = initialState, action) => {
-//   console.log('action', action)
-//   //quan trong trnog code no ko work thi devtool ko lq em
-//   //Anh dang mentor, em coi check lai flow code, cốnle log coi ra data ko, co gi toi anh fix tiep nhe
-//   switch (action.type) {
-//     case "selectTicket": {
-//       //Code ko chay len reducer
-//       const index = state.selectedTicket.findIndex(
-//         (item) => item.stt === action.danhSachGhe.stt
-//       );
-//       if (index === -1) {
-//         const newSelectedTicket = [
-//           ...state.selectedTicket,
-//           { ...action.danhSachGhe },
-//         ];
-//         return { ...state, selectedTicket: newSelectedTicket };
-//       }
-//       const newSelectedTicket = state.selectedTicket.filter(
-//         (item) => item.name !== action.seats.name
-//       );
-//       return { ...state, selectedTicket: newSelectedTicket };
-//     }
-//     case "deleteTicket": {
-//       const newSelectedTicket = state.selectedTicket.filter(
-//         (item) => item.name !== action.seatsID.name
-//       );
-//       return { ...state, selectedTicket: newSelectedTicket };
-//     }
-//     default:
-//       return state;
-//   }
-// };
+
 
 export default ticketsSlice.reducer;

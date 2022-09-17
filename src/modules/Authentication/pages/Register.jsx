@@ -23,6 +23,41 @@ const Register = () => {
     mode: "onTouched",
   });
   const navigate = useNavigate();
+  const styleRegister = {
+    width: "600px",
+    height: "fit-content",
+    zIndex: "1000",
+    position: "relative",
+    borderRadius: "6px",
+    backgroundImage:
+      "linear-gradient(to bottom,rgb(255 255 255 / 90%),rgba(64, 108, 106,.9))",
+  };
+  const styleContent = {
+    padding: "60px 32px 30px",
+    color: "text-white",
+  };
+  const styleImg = {
+    display: "block",
+    marginLeft: "auto",
+    marginRight: "auto",
+    marginBottom: "13px",
+  };
+  const styleButton = {
+    top: "0",
+    right: "0",
+    border: "2px solid white",
+    position: "absolute",
+    transform: "translate(50%,-50%)",
+    transition: "all .2s",
+    color: "white",
+    padding: "12px",
+    overflow: "visible",
+    fontSize: "1.5rem",
+    textAlign: "center",
+    transition: "background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms",
+    borderRadius: "50%",
+    
+  }
 
   const { data: handleRegister, isLoading } = useRequest(
     (values) => authAPI.register(values),
@@ -48,9 +83,18 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit(onSubmit, onError)}>
+    <div className="Register" style={styleRegister}>
+    <div style={styleContent}>
+      <div className="container">
+        <img
+          style={styleImg}
+          src="https://cybersoft.edu.vn/wp-content/uploads/2017/03/MIN-OP1.png"
+          alt="Cybershop.edu.vn"
+        />
+        <h1 className="text-center mb-7">Đăng kí</h1>
+      </div>
+      <div>
+      <form className="flex flex-col items-center justify-center gap-4"  onSubmit={handleSubmit(onSubmit, onError)}>
         <div>
           <input
             type="text"
@@ -111,8 +155,11 @@ const Register = () => {
             required: true,
           })}
         />
-        <button>Đăng Ký</button>
+        <button className="border p-3 bg-slate-100 font-bold">Đăng Ký</button>
       </form>
+      </div>
+      </div>
+      <button onClick={()=>  navigate("/")} style={styleButton}>X</button>
     </div>
   );
 };

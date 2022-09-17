@@ -1,4 +1,11 @@
 .backGround {
     background-image: url("../../../src/img/bgAuth.jpg");
-    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: contain;
+    justify-content: center;
+    
+    background-position: center;
 }

@@ -1,9 +1,11 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+
 const initialState = {
   
   selectedTicket: [],
   
 };
+
 
 const selectTicketHandler = (state = initialState, { payload }) => {
   
@@ -31,7 +33,7 @@ const selectTicketHandler = (state = initialState, { payload }) => {
 };
 
 const removeAllTicketHandler = (state) => {
-  state.danhSachVe.length = 0;
+  state.selectedTicket.length = 0;
 };
 const selectedTicketsSlice = createSlice({
   name: "ticket/selectedTickets",

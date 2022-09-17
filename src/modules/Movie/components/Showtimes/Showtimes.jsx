@@ -1,8 +1,9 @@
-import React, { Fragment } from "react";
+import React  from "react";
 import useRequest from "hooks/useRequest";
 import movieAPI from "apis/movieAPI";
 import { Tabs } from "antd";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 import moment from "moment";
 
 const Showtimes = ({ movieId }) => {
@@ -11,10 +12,16 @@ const Showtimes = ({ movieId }) => {
     isLoading,
     error,
   } = useRequest(() => movieAPI.getShowTimesDetails(movieId));
-
+const navigate = useNavigate();
   if (!showTimes) {
     return null;
   }
+  
+  const goToTicket= (checkoutId) => {
+   
+    navigate(`/checkout/${checkoutId}`);
+  };
+  
   
 
   return  <Tabs
@@ -57,15 +64,15 @@ const Showtimes = ({ movieId }) => {
                                 ?.slice(0, 12)
                                 .map((lichChieu, index) => {
                                   return (
-                                    <NavLink
+                                    <button onClick={()=> goToTicket(lichChieu.maLichChieu)}
                                       className="text-xl text-green-400 no-underline text-center border rounded-md mt-2"
-                                      to="/"
+                                     
                                       key={index}
                                     >
                                       {moment(
                                         lichChieu.ngayChieuGioChieu
                                       ).format("hh:mm A")}
-                                    </NavLink>
+                                    </button>
                                   );
                                 })}
                             </div>
