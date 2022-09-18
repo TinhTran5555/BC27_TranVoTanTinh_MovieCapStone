@@ -65,7 +65,12 @@ const Header = () => {
               >
                 Liên Hệ
               </a>
-            </li>
+            </li>  <li
+                  onClick={() => goToLogin("admin")}
+                  className="self-center px-8 py-3 font-semibold rounded hover:border hover:font-bold dark:bg-violet-400 dark:text-gray-900"
+                >
+                  Admin
+                </li>
           </ul>
           {user ? (
             <div>
@@ -108,6 +113,8 @@ const Header = () => {
                 >
                   Đăng Nhập
                 </button>
+              
+                
               </div>
               <div>
                 {" "}
