@@ -14,6 +14,7 @@ export const getTicketDetails = createAsyncThunk(
       const data = await movieAPI.getTicketDetails(ticketId);
       return data;
     } catch (error) {
+      console.log(error);
       return rejectWithValue(error);
     }
   }

@@ -6,8 +6,8 @@ const AuthLayout = () => {
   return (
     <section className=" relative">
       <div className="backGround ">
-        <Outlet  /></div>
-      
+        <Outlet />
+      </div>
     </section>
   );
 };

@@ -4,14 +4,16 @@ import {
   PieChartOutlined,
   TeamOutlined,
   UserOutlined,
+  
 } from '@ant-design/icons';
 import {useDispatch,  useSelector } from "react-redux";
-import { Breadcrumb, Layout, Menu } from 'antd';
+import { Layout, Menu } from 'antd';
 import MenuItem from 'antd/lib/menu/MenuItem';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { logout } from "modules/Authentication/slices/authSlice";
 import { useNavigate } from "react-router-dom";
+import SubMenu from 'antd/lib/menu/SubMenu';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -41,16 +43,27 @@ const { user } = useSelector((state) => state.auth);
               alt="Cybershop.edu.vn"
             />
         </div>
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" >
-          <MenuItem key="1" icon={<UserOutlined/>}>
-            <NavLink to="/user">User</NavLink>
-          </MenuItem>
-          <MenuItem key="2" icon={<FileOutlined/>}>
-            <NavLink to="/movieList">Movie</NavLink>
-          </MenuItem>
-          <MenuItem key="3" icon={<DesktopOutlined/>}>
-            <NavLink to="/deatail">ShowTime</NavLink>
-          </MenuItem>
+        <Menu  theme="dark" defaultSelectedKeys={['1']} mode="inline" >
+        <SubMenu key="sub2" icon={<UserOutlined/>} title="User">
+          <Menu.Item key="5" icon={<UserOutlined/>}>
+            <NavLink to="/admin/userList">User</NavLink>
+          </Menu.Item> 
+          <Menu.Item key="6" icon={<UserOutlined/>}>
+            <NavLink to="/admin/userList/addnew">Add New User</NavLink>
+          </Menu.Item> 
+
+          </SubMenu>
+          <SubMenu key="sub3" icon={<FileOutlined/>} title="Movie">
+              <Menu.Item key="10" icon={<FileOutlined/>}>
+            <NavLink to="/admin/movieList">Movie</NavLink>
+          </Menu.Item>
+          <Menu.Item key="11" icon={<FileOutlined/>}>
+            <NavLink to="/admin/movieList/addnew">Add New Movie</NavLink>
+          </Menu.Item> 
+         </SubMenu>
+          <Menu.Item key="3" icon={<DesktopOutlined/>}>
+            <NavLink to="/admin/deatail">ShowTime</NavLink>
+          </Menu.Item>
         </Menu>
          
       </Sider>
@@ -63,17 +76,14 @@ const { user } = useSelector((state) => state.auth);
         >
           <div >
             {" "}
-            <div className="dropdown inline-block relative  bg-slate-200 flex justify-center h-full">
-              <button className="pr-4 p-2 font-bold text-xl hover:border">
+            <div className="dropdown relative  bg-slate-200 flex justify-center h-full pr-5">
+              <button className="pr-4 p-2 font-bold text-xl hover:border">Tài khoản: 
                 
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
+              
                 
                 {user.taiKhoan}
+                  
+                
               </button>
 
               <ul className="dropdown-menu right-0 hidden text-gray-700 pt-1 absolute ">
@@ -90,23 +100,7 @@ const { user } = useSelector((state) => state.auth);
             margin: '0 16px',
           }}
         >
-          <Breadcrumb
-            style={{
-              margin: '16px 0',
-            }}
-          >
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
-          </Breadcrumb>
-          <div
-            className="site-layout-background"
-            style={{
-              padding: 24,
-              minHeight: 360,
-            }}
-          >
-            Bill is a cat.
-          </div>
+          <Outlet />
         </Content>
        
       </Layout>

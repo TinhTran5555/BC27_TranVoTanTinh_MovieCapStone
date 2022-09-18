@@ -34,7 +34,6 @@ const useRequest = (fn, config = {}) => {
     } catch (error) {
       throw error;
     } finally {
-      // Dù thành công hay thất bại đều nhảy vào block finally
       dispatch({ type: "REQUEST_FINAL" });
     }
   };

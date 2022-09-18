@@ -167,7 +167,7 @@ const Footer = () => {
               >
                 <img
                   src="https://movie-booking-project.vercel.app/img/logo-connect/dcine.png"
-                  alt = "logo_dcine"
+                  alt="logo_dcine"
                   className="logo"
                 />
               </a>
@@ -178,7 +178,7 @@ const Footer = () => {
               >
                 <img
                   src="https://movie-booking-project.vercel.app/img/logo-connect/zalopay_icon.png"
-                  alt = "logo_zalopa"
+                  alt="logo_zalopa"
                   className="logo"
                 />
               </a>
@@ -189,7 +189,7 @@ const Footer = () => {
               >
                 <img
                   src="https://movie-booking-project.vercel.app/img/logo-connect/payoo.jpg"
-                  alt = "logo_payoo"
+                  alt="logo_payoo"
                   className="logo"
                 />
               </a>
@@ -200,7 +200,7 @@ const Footer = () => {
               >
                 <img
                   src="https://movie-booking-project.vercel.app/img/logo-connect/AGRIBANK.png"
-                  alt = "logo_AGRIBANK"
+                  alt="logo_AGRIBANK"
                   className="logo"
                 />
               </a>
@@ -219,7 +219,7 @@ const Footer = () => {
                 <img
                   className="logo"
                   src="https://movie-booking-project.vercel.app/img/mobile-system/apple-logo.png"
-                  alt = "logo_apple"
+                  alt="logo_apple"
                 />
               </a>
               <a
@@ -230,7 +230,7 @@ const Footer = () => {
                 <img
                   className="logo"
                   src="https://movie-booking-project.vercel.app/img/mobile-system/android-logo.png"
-                  alt = "logo_android"
+                  alt="logo_android"
                 />
               </a>
             </div>
@@ -246,7 +246,7 @@ const Footer = () => {
                 <img
                   className="logo"
                   src="https://movie-booking-project.vercel.app/img/media/facebook-logo.png"
-                  alt = "logo_facebook"
+                  alt="logo_facebook"
                 />
               </a>
               <a
@@ -257,7 +257,7 @@ const Footer = () => {
                 <img
                   className="logo"
                   src="https://movie-booking-project.vercel.app/img/media/zalo-logo.png"
-                  alt = "logo_zalo"
+                  alt="logo_zalo"
                 />
               </a>
             </div>

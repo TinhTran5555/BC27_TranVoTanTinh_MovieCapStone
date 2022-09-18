@@ -4,63 +4,54 @@ import { Carousel } from "antd";
 import React, { useState, useEffect } from "react";
 import useViewport from "components/useViewport/useViewport";
 
-
-
 const Banner = () => {
   const viewPort = useViewport();
   const isSmallMobile = viewPort.width <= 768;
- let valueWidthTrailer = 700
- let valueHeightTrailer = 500
- if (isSmallMobile) {
-  valueWidthTrailer = 500;
-  valueHeightTrailer = 300;
-
- }
+  let valueWidthTrailer = 700;
+  let valueHeightTrailer = 500;
+  if (isSmallMobile) {
+    valueWidthTrailer = 500;
+    valueHeightTrailer = 300;
+  }
 
   const contentStyle = {
-  backgroundPosition: "center",
-  backgroundSize: "cover",
-  backgroundRepeat: "no-repeat",
-  height: "670px",
-  position: "relative",
-};
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
+    height: "670px",
+    position: "relative",
+  };
 
-const buttonPlayStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%,-50%)",
-};
-const overlay = {
-  width: "100%",
-  height: "100%",
-  top: "0",
-  left: "0",
-  right: "0",
-  bottom: "0",
-  backgroundColor: "rgba(0,0,0,0.1)",
-  zIndex: "2",
-  cursor: "pointer",
-  
-};
-const trailerStyle = {
-  position: "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%,-50%)",
-  zIndex: "40",
-};
-const TRAILERS = [
-  "https://www.youtube.com/embed/uqJ9u7GSaYM",
-  "https://www.youtube.com/embed/kBY2k3G6LsM",
-  "https://www.youtube.com/embed/Eu9G8nO5-Ug",
-];
-  
-  // const dispatch = useDispatch();
-  // const { banners, isLoading, error } = useSelector((state) => state.banner);
-  // useEffect(() => {
-  //   dispatch(getBanners());
-  // }, []);
+  const buttonPlayStyle = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%,-50%)",
+  };
+  const overlay = {
+    width: "100%",
+    height: "100%",
+    top: "0",
+    left: "0",
+    right: "0",
+    bottom: "0",
+    backgroundColor: "rgba(0,0,0,0.1)",
+    zIndex: "2",
+    cursor: "pointer",
+  };
+  const trailerStyle = {
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%,-50%)",
+    zIndex: "40",
+  };
+  const TRAILERS = [
+    "https://www.youtube.com/embed/uqJ9u7GSaYM",
+    "https://www.youtube.com/embed/kBY2k3G6LsM",
+    "https://www.youtube.com/embed/Eu9G8nO5-Ug",
+  ];
+
   const [showingTrailer, setShowingTrailer] = useState(false);
   function openTrailer() {
     setShowingTrailer(true);
@@ -117,8 +108,7 @@ const TRAILERS = [
                   <iframe
                     style={trailerStyle}
                     marginHeight="50px"
-                    width={  valueWidthTrailer
-                    }
+                    width={valueWidthTrailer}
                     height={valueHeightTrailer}
                     src={banner.trailer}
                     title="YouTube video player"

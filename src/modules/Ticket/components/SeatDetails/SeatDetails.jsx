@@ -11,6 +11,7 @@ import { postDatVe, ThongTinDatVe } from "modules/Ticket/reducer/ThongTinDatVe";
 
 import { useParams } from "react-router-dom";
 const SeatDetails = () => {
+  
   const {checkoutId} = useParams()
   
   const dispatch = useDispatch();
